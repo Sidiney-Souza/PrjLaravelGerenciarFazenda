@@ -11,16 +11,40 @@ and open the template in the editor.
     </head>
     <body>
         <h1>Novo Produto</h1>
-        <form method="post" action="{{route('produto.store')}}" >
+        
+        
+        
+        
+        @if(session('msg'))
+            <p>{{session('msg')}}</p>
+        @endif
+        
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+        
+        
+        
+        <form method="post" action="{{route('animal.store')}}" >
             @csrf
-            Nome:
-            <input type="text" name="nome"><br>
-            Quantidade:
-            <input type="text" name="qtd"><br>
-            Preço:
-            <input type="text" name="preco"><br>
-            Imagens:
-            <input type="text" name="foto"><br>
+            Código:<br>
+            <input type="text" name="codigo"><br><br>
+            data de nascimento:<br>
+            <input type="text" name="data_nasc"><br><br>
+            sexo:<br>
+            <input type="text" name="sexo"><br><br>
+            peso:<br>
+            <input type="text" name="peso"><br><br>
+            data de pesagem:<br>
+            <input type="text" name="data_pesag"><br><br>
+            Observações:<br>
+            <textarea type="text" name="observacoes"></textarea><br><br>
             <input type="submit" name="Salvar"><br>
         </form>
             

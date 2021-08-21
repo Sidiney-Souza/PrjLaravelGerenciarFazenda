@@ -24,7 +24,7 @@ class AnimalController extends Controller
      */
     public function create()
     {
-        //
+        return view('animal.create');
     }
 
     /**
@@ -35,8 +35,26 @@ class AnimalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $request->validate([
+            'codigo'=>['required'],
+            'data_nasc'=>['required'],
+            'sexo'=>['required'],
+            'peso'=>['required'],
+            'da_pesag'=>['required'],
+        ]);
+                
+        
+        $animal = Animal::create($request->all());
+        
+        if ($animal) {
+            return redirect()->route('animal.create')->with('msg', "O animal foi $animal->codigo Cadastrado.");
+        }else{
+
+            return redirect()->route('animal.create')->with('msg', "O animal foi $animal->codigo Cadastrado.");
+        }
     }
+        
 
     /**
      * Display the specified resource.
