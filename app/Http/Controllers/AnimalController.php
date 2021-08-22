@@ -77,8 +77,11 @@ class AnimalController extends Controller
      */
     public function edit(Animal $animal)
     {
+        
+        
         return view('animal.edit', ['animal' => $animal]);
 
+        
     }
 
     /**

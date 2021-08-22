@@ -15,17 +15,17 @@ and open the template in the editor.
             @csrf
             @method('PATCH')
             Código:
-            <input type="text" name="codigo" value="{{$produto->codigo}}"><br>
+            <input type="text" name="codigo" value="{{$animal->codigo}}"><br>
             Data de nascimento:
-            <input type="text" name="data_nasc" value="{{$produto->data_nasc}}"><br>
+            <input type="text" name="data_nasc" value="{{$animal->data_nasc}}"><br>
             sexo:
-            <input type="text" name="sexo" value="{{$produto->sexo}}"><br>
+            <input type="text" name="sexo" value="{{$animal->sexo}}"><br>
             peso:
-            <input type="text" name="peso" value="{{$produto->peso}}"><br>
+            <input type="text" name="peso" value="{{$animal->peso}}"><br>
             Data de pesagem:
-            <input type="text" name="data_pesag"value="{{$produto->data_pesag}}"><br>
+            <input type="text" name="data_pesag"value="{{$animal->data_pesag}}"><br>
             Observações:
-            <input type="text" name="observacoes"value="{{$produto->observacoes}}"><br>
+            <input type="text" name="observacoes"value="{{$animal->observacoes}}"><br>
             <input type="submit" name="Salvar"><br>
         </form>
             
