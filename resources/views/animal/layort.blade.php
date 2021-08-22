@@ -8,14 +8,14 @@
         <!-- Bootstrap CSS11111111111 -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
-        <title>House's G</title>
+        <title>A FAZENDA</title>
     </head>
     <body>
 
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{route('produto.index')}}">House's G</a>
+                <a class="navbar-brand" href="{{route('animal.index')}}">A FAZENDA</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -32,8 +32,7 @@
                                 Geral
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="{{route('produto.index')}}">Produtos</a></li>
-                                <li><a class="dropdown-item" href="{{route('usuario.index')}}">Usuários</a></li>
+                                <li><a class="dropdown-item" href="{{route('animal.index')}}">Animais</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
@@ -42,9 +41,9 @@
                             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                         </li>
                     </ul>
-                    <form action="{{route('produto.search')}}" method="POST" class="d-flex">
+                    <form action="{{route('animal.search')}}" method="POST" class="d-flex">
                         @csrf
-                        <input class="form-control me-2" type="search" name="nome" placeholder="Busca por nome" aria-label="Search">
+                        <input class="form-control me-2" type="search" name="data_nasc" placeholder="Busca por data" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Pesquisar</button>
                     </form>
                 </div>

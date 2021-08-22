@@ -24,5 +24,6 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
+Route::post('animal/search', [AnimalController::class, 'search'])->name('animal.search');
 
 Route::resource('animal', AnimalController::class);

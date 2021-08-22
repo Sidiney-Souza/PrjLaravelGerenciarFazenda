@@ -14,7 +14,9 @@ class AnimalController extends Controller
      */
     public function index()
     {
-        //
+        $animal = Animal::all();
+        
+        return view('animal.animal', ['animal' => $animal]);
     }
 
     /**
@@ -37,11 +39,11 @@ class AnimalController extends Controller
     {
         
         $request->validate([
-            'codigo'=>['required'],
+            'codigo'=>['required', 'min:5','max:5'],
             'data_nasc'=>['required'],
             'sexo'=>['required'],
             'peso'=>['required'],
-            'da_pesag'=>['required'],
+            'data_pesag'=>['required'],
         ]);
                 
         
@@ -64,7 +66,7 @@ class AnimalController extends Controller
      */
     public function show(Animal $animal)
     {
-        //
+        return view('animal.show', ['animal' => $animal]);
     }
 
     /**
@@ -75,7 +77,8 @@ class AnimalController extends Controller
      */
     public function edit(Animal $animal)
     {
-        //
+        return view('animal.edit', ['animal' => $animal]);
+
     }
 
     /**
@@ -87,7 +90,11 @@ class AnimalController extends Controller
      */
     public function update(Request $request, Animal $animal)
     {
-        //
+        $animal->update($request->all());
+
+        $msg = "O animal {$animal->nome} alterado com sucesso";
+
+        return redirect()->route("animal.index")->with('msg', $msg);
     }
 
     /**
@@ -96,8 +103,25 @@ class AnimalController extends Controller
      * @param  \App\Models\Animal  $animal
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Animal $animal)
-    {
-        //
+    public function destroy(Animal $animal){
+
+
+        $nome = $animal->nome;
+        if ($animal->delete()) {
+            \Session::flash('msg', "O animal {$nome} foi removido");
+        } else {
+            \Session::flash('msg', "O animal {$nome} não foi removido");
+        }
+        return redirect()->route("animal.index");
+    
     }
-}
+    public function search(Request $request) {
+        if ($request->data_nasc) {
+            $animal = (new Animal())->buscaPorData($request->data_nasc);
+        } else {
+            $animal = Animal::all();
+        }
+        
+        return view('animal.animal', ['animal' => $animal]);
+    }
+    }

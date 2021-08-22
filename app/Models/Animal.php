@@ -19,5 +19,8 @@ class Animal extends Model
         'observacoes',
 ];
     
+        public function buscaPorData(string $darta_nasc = '') {
+        return $this->where('nome', 'like', "%$darta_nasc%")->get();
+    }
     
 }

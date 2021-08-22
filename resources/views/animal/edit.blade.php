@@ -10,18 +10,22 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <h1>Alteralção do produto{{$produto->nome}}</h1>
-        <form action="{{route('produto.update', ['produto'=>$produto])}}" method="POST" >
+        <h1>Alteralção do animal{{$animal->codigo}}</h1>
+        <form action="{{route('animal.update', ['animal'=>$animal])}}" method="POST" >
             @csrf
             @method('PATCH')
-            Nome:
-            <input type="text" name="nome" value="{{$produto->nome}}"><br>
-            Quantidade:
-            <input type="text" name="qtd" value="{{$produto->qtd}}"><br>
-            Preço:
-            <input type="text" name="preco" value="{{$produto->preco}}"><br>
-            Foto:
-            <input type="text" name="foto"value="{{$produto->foto}}"><br>
+            Código:
+            <input type="text" name="codigo" value="{{$produto->codigo}}"><br>
+            Data de nascimento:
+            <input type="text" name="data_nasc" value="{{$produto->data_nasc}}"><br>
+            sexo:
+            <input type="text" name="sexo" value="{{$produto->sexo}}"><br>
+            peso:
+            <input type="text" name="peso" value="{{$produto->peso}}"><br>
+            Data de pesagem:
+            <input type="text" name="data_pesag"value="{{$produto->data_pesag}}"><br>
+            Observações:
+            <input type="text" name="observacoes"value="{{$produto->observacoes}}"><br>
             <input type="submit" name="Salvar"><br>
         </form>
             

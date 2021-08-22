@@ -10,7 +10,7 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <h1>Novo Produto</h1>
+        <h1>Novo Animal</h1>
         
         
         

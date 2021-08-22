@@ -10,15 +10,17 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <h1>Detalhes do Produto</h1>
-        Id: {{$produto->id}}<br>
-        Nome:{{$produto->nome}}<br>
-        Quantidade: {{$produto->qtd}}<br>
-        Preço: {{$produto->preco}}<br>
-        foto: {{$produto->foto}}<br>
-        Data do cadastro: {{$produto->created_at}}<br>
-        hora de atualização: {{$produto->update_at}}<br>
+        <h1>Detalhes do animal</h1>
+        Id: {{$animal->id}}<br>
+        Código:{{$animal->codigo}}<br>
+        Data de nascimento: {{$animal->data_nasc}}<br>
+        sexo: {{$animal->sexo}}<br>
+        peso: {{$animal->peso}}<br>
+        Data de pesagem: {{$animal->data_pesag}}<br>
+        Observações: {{$animal->observacoes}}<br>
+        Data do cadastro: {{$animal->created_at}}<br>
+        hora de atualização: {{$animal->update_at}}<br>
         <br><br>
-        <a href='{{route('produto.index')}}'>Voltar</a>
+        <a href='{{route('animal.index')}}'>Voltar</a>
     </body>
 </html>
