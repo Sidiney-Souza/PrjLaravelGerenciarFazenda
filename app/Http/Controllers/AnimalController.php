@@ -121,10 +121,15 @@ class AnimalController extends Controller
     public function search(Request $request) {
         if ($request->data_nasc) {
             $animal = (new Animal())->buscaPorData($request->data_nasc);
+
+            
+            
         } else {
             $animal = Animal::all();
         }
         
         return view('animal.animal', ['animal' => $animal]);
+    
+        
     }
     }
