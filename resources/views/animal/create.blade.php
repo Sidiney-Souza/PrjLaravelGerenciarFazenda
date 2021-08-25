@@ -38,9 +38,10 @@ and open the template in the editor.
             data de nascimento:<br>
             <input type="text" name="data_nasc"><br><br>
             sexo:<br>
-            <input type="text" name="sexo"><br><br>
+            F<input type="radio" name="sexo" value="F"><br>
+            M<input type="radio" name="sexo" value="M"><br><br>
             peso:<br>
-            <input type="text" name="peso"><br><br>
+            <input type="number" step="0.01" name="peso"><br><br>
             data de pesagem:<br>
             <input type="text" name="data_pesag"><br><br>
             Observações:<br>

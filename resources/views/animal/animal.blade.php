@@ -4,6 +4,13 @@
 
     @section('conteudo')  
         <h1>Todos os animais presentes</h1>
+        @if($errors->any())
+            @foreach($errors->all() as $erro)
+            <p>
+                {{$erro}}
+            </p>
+            @endforeach
+        @endif
         <br><a href="{{route('animal.create')}}">cadastrar um novo animal</a><br><br>
         
         @if(session('msg'))

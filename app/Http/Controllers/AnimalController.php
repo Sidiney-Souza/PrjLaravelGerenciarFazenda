@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class AnimalController extends Controller
 {
+//    public function __construct() {
+//        $this->middleware(['auth'])->only(['store', 'update', 'destroy']);
+//    }
     /**
      * Display a listing of the resource.
      *
@@ -39,7 +42,7 @@ class AnimalController extends Controller
     {
         
         $request->validate([
-            'codigo'=>['required', 'min:5','max:5'],
+            'codigo'=>['required', 'regex:/^[A-Z0-9]{5}$/'],
             'data_nasc'=>['required'],
             'sexo'=>['required'],
             'peso'=>['required'],
@@ -119,6 +122,8 @@ class AnimalController extends Controller
     
     }
     public function search(Request $request) {
+        $request->validate(['data_nasc'=>'date']);
+        
         if ($request->data_nasc) {
             $animal = (new Animal())->buscaPorData($request->data_nasc);
 
